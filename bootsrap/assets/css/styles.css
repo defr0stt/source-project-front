@@ -353,3 +353,44 @@ body{
     border: 1px solid #e6e4e9;
     border-radius: 8px;
 }
+
+.page-link {
+    color: #ffffff; /* Text color */
+    background-color: #581873; /* Background color */
+    border: 1px solid #581873; /* Border color */
+}
+
+.page-link:hover {
+    color: #ffffff;
+    background-color: #4a1461; /* Darker purple on hover */
+    border-color: #4a1461;
+}
+
+.page-item.active .page-link {
+    color: #ffffff; /* Active text color */
+    background-color: #8220ab; /* Active background color */
+    border-color: #8220ab; /* Active border color */
+}
+
+.page-item.disabled .page-link {
+    color: #cccccc; /* Disabled text color */
+    background-color: #f8f9fa; /* Disabled background color */
+    border-color: #dddddd; /* Disabled border color */
+}
+
+.purple-link {
+    font-size: 14px;
+    color: #000; /* Text color */
+}
+
+.purple-link:hover {
+    font-size: 14px;
+    color: #581873;
+    text-decoration: none;
+}
+
+/*.page-link.link {*/
+/*    color: #ffffff; !* Active text color *!*/
+/*    background-color: #8220ab; !* Active background color *!*/
+/*    border-color: #8220ab; !* Active border color *!*/
+/*}*/
