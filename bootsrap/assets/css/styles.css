@@ -1,3 +1,5 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 .bg-custom-purple {
     background-color: #581873;
 }
@@ -14,7 +16,6 @@
     margin-top: 50px;
 }
 
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section{
     padding: 60px 0;
 }
@@ -62,7 +63,7 @@ section .section-title{
     font-family: FontAwesome;
     position: absolute;
     font-size: 39px;
-    color: #007b5e;
+    color: #581873;
     left: 0;
     -webkit-transition: -webkit-transform .2s ease-in-out;
     transition:transform .2s ease-in-out;
