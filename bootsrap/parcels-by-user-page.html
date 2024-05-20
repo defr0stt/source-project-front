@@ -24,7 +24,7 @@
          <div class="navbar-collapse collapse" id="navbarsExample01" style="">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item">
-                  <a class="nav-link" href="login-page.html">Авторизація користуача&nbsp;&nbsp;
+                  <a class="nav-link" id="auth-text-href" href="login-page.html"> <span id="auth-text">Авторизація користуача</span>&nbsp;&nbsp;
                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                         <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
@@ -101,52 +101,52 @@
                               <div class="table-responsive">
                                  <table class="table widget-26">
                                     <tbody>
-<!--                                    <tr>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-title">-->
-<!--                                             <span id="received-parcel-id">59 0011 5112<b id="received-parcel-id-fat"> 8795</b></span>-->
-<!--                                             <p class="m-0" style="font-size: 12px">Надіслано: <span class="text-muted time">3 дні(-ів) тому</span></p>-->
-<!--                                          </div>-->
-<!--                                       </td>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-info">-->
-<!--                                             <p class="type m-0">з міста <span id="location-res-sender">Львів</span></p>-->
-<!--                                             <p class="type m-0">до міста <span id="location-res-receiver">Вінниця</span></p>-->
-<!--                                          </div>-->
-<!--                                       </td>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-salary">Дати надсилання: <span class="oriented-receive-date">16.05.2024</span></div>-->
-<!--                                          <div class="widget-26-job-salary">Дати прибуття: <span class="oriented-receive-date">18.05.2024</span></div>-->
-<!--                                       </td>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-category bg-soft-base">-->
-<!--                                             <span>На шляху до пункту призначення</span>-->
-<!--                                          </div>-->
-<!--                                       </td>-->
-<!--                                    </tr>-->
-<!--                                    <tr>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-title">-->
-<!--                                             <span id="received-parcel-id-2">59 0011 5007<b id="received-parcel-id-fat-2"> 8795</b></span>-->
-<!--                                             <p class="m-0" style="font-size: 12px">Надіслано: <span class="text-muted time">1 дні(-ів) тому</span></p>-->
-<!--                                          </div>-->
-<!--                                       </td>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-info">-->
-<!--                                             <p class="type m-0">з міста <span id="location-res-sender-2">Львів</span></p>-->
-<!--                                             <p class="type m-0">до міста <span id="location-res-receiver-2">Вінниця</span></p>-->
-<!--                                          </div>-->
-<!--                                       </td>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-salary">Дати надсилання: <span class="oriented-receive-date">18.05.2024</span></div>-->
-<!--                                          <div class="widget-26-job-salary">Дати прибуття: <span class="oriented-receive-date">20.05.2024</span></div>-->
-<!--                                       </td>-->
-<!--                                       <td>-->
-<!--                                          <div class="widget-26-job-category indicator bg-soft-danger">-->
-<!--                                             <span>Скасовано</span>-->
-<!--                                          </div>-->
-<!--                                       </td>-->
-<!--                                    </tr>-->
+                                    <tr>
+                                       <td>
+                                          <div class="widget-26-job-title">
+                                             <span id="received-parcel-id">59 0011 5112<b id="received-parcel-id-fat"> 8795</b></span>
+                                             <p class="m-0" style="font-size: 12px">Надіслано: <span class="text-muted time">3 дні(-ів) тому</span></p>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="widget-26-job-info">
+                                             <p class="type m-0">з міста <span id="location-res-sender">Львів</span></p>
+                                             <p class="type m-0">до міста <span id="location-res-receiver">Вінниця</span></p>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="widget-26-job-salary">Дати надсилання: <span class="oriented-receive-date">16.05.2024</span></div>
+                                          <div class="widget-26-job-salary">Дати прибуття: <span class="oriented-receive-date">18.05.2024</span></div>
+                                       </td>
+                                       <td>
+                                          <div class="widget-26-job-category bg-soft-base">
+                                             <span>На шляху до пункту призначення</span>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <div class="widget-26-job-title">
+                                             <span id="received-parcel-id-2">59 0011 5007<b id="received-parcel-id-fat-2"> 8795</b></span>
+                                             <p class="m-0" style="font-size: 12px">Надіслано: <span class="text-muted time">1 дні(-ів) тому</span></p>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="widget-26-job-info">
+                                             <p class="type m-0">з міста <span id="location-res-sender-2">Львів</span></p>
+                                             <p class="type m-0">до міста <span id="location-res-receiver-2">Вінниця</span></p>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="widget-26-job-salary">Дати надсилання: <span class="oriented-receive-date">18.05.2024</span></div>
+                                          <div class="widget-26-job-salary">Дати прибуття: <span class="oriented-receive-date">20.05.2024</span></div>
+                                       </td>
+                                       <td>
+                                          <div class="widget-26-job-category indicator bg-soft-danger">
+                                             <span>Скасовано</span>
+                                          </div>
+                                       </td>
+                                    </tr>
                                     </tbody>
                                  </table>
                               </div>
