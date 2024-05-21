@@ -62,7 +62,7 @@
 
 
 <!--      REGISTRATION FORM-->
-      <form>
+      <form id="registerForm">
          <section class="h-100 bg-custom-grey registration-form">
             <br>
             <div class="container py-5 h-100">
@@ -112,7 +112,7 @@
                                  <div class="row">
                                     <div class="col-md-6 mb-4">
                                        <div class="form-outline">
-                                          <input type="email" id="form3Example5n" class="form-control form-control-sm" placeholder="martin@example.com" name="username"/>
+                                          <input type="email" id="form3Example5n" class="form-control form-control-sm" placeholder="martin@example.com" name="email"/>
                                           <label class="form-label" for="form3Example5n"> Email-адреса </label>
                                        </div>
                                     </div>
@@ -125,19 +125,23 @@
                                  </div>
 
                                  <div class="form-outline mb-4">
-                                    <input type="text" id="form3Example19" class="form-control form-control-sm" placeholder="+380769725310" name="phoneNumber"/>
+                                    <input type="text" id="form3Example19" class="form-control form-control-sm" placeholder="380769725310" name="phoneNumber"/>
                                     <label class="form-label" for="form3Example19"> Номер телефону </label>
                                  </div>
 
-                                 <div class="d-flex justify-content-end pt-3">
+                                 <div class="form-outline mb-4">
+                                    <input type="text" id="form4Example19" class="form-control form-control-sm" placeholder="https://img.kwcdn.com/product..." name="imageUrl"/>
+                                    <label class="form-label" for="form4Example19"> URL-адреса зображення </label>
+                                 </div>
+
+                                 <div class="d-flex justify-content-end">
                                     <button type="reset" class="btn btn-light btn"> Очистити дані </button> &nbsp;&nbsp;&nbsp;&nbsp;
                                     <button type="submit" class="btn bg-custom-purple text-white"> Зареєструватись </button>
                                  </div>
 
                                  <br>
-                                 <br>
 
-                                 <div class="form-outline mb-4">
+                                 <div class="form-outline">
                                     <h6>Уже зареєстровані у нашій системі? <span class="badge badge-secondary"></span></h6>
                                     <a href="login-page.html" class="badge bg-custom-purple text-white">Увійти до акаунту</a>
                                  </div>
