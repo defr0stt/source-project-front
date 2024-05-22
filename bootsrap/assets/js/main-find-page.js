@@ -102,6 +102,7 @@ async function searchItems() {
         console.log(jsonResponse);
 
         const obj = {
+            id: jsonResponse.get('id'),
             imageUrl: jsonResponse.get('imageUrl'),
             name: jsonResponse.get('name'),
             itemType: jsonResponse.get('itemType'),
