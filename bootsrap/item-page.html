@@ -75,8 +75,9 @@
   <h3 class="section-title mb-2 h2 text-dark" id="item-title">Назва товару</h3>
 </div>
 
+<form id="update-form">
 <div class="container emp-profile" id="main-item-show">
-  <form method="post">
+
     <div class="row">
       <div class="col-md-4">
         <div class="profile-img">
@@ -114,7 +115,7 @@
         <div class="col-md-9" style="margin-left: auto; margin-right: auto;" id="button-div">
           &nbsp;&nbsp;<button type="button" onclick="updateItem()" class="btn bg-custom-grey " id="change-button"><a class="text-dark">Змінити</a> </button>
           <p></p>
-          <button type="button" class="btn btn-danger text-white" id="drop-button"><a class="text-white">Видалити</a> </button>
+          <button type="button" onclick="dropItem()" class="btn btn-danger text-white" id="drop-button"><a class="text-white">Видалити</a> </button>
         </div>
       </div>
       <div class="col-md-8">
@@ -171,7 +172,7 @@
         </div>
       </div>
     </div>
-  </form>
+
   <br>
   <br>
   <div class="col-md-5" style="margin-left: auto; margin-right: auto;">
@@ -179,6 +180,7 @@
     <button type="submit" class="btn bg-custom-purple text-white" id="add-to-cart-button"><a class="text-white" id="add-to-cart">Додати у кошик</a> </button>
   </div>
 </div>
+</form>
 
 
 <br>

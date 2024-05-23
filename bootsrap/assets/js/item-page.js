@@ -2,6 +2,7 @@ const apiItemUrl = 'http://localhost:8383/api/v1/delivery/item/';
 const apiAuthUrl = 'http://localhost:8181/api/v1/auth/get-user-data/';
 
 const availability = new Map();
+let generalItem = '';
 
 const itemShow = document.getElementById('main-item-show');
 
@@ -38,6 +39,7 @@ async function fetchItemData() {
             throw new Error("Network response was not OK");
         }
         var jsonResponse = new Map(Object.entries(await responseItem.json()));
+        generalItem = jsonResponse;
         console.log(jsonResponse);
 
         itemName.innerText = jsonResponse.get("name");
@@ -74,19 +76,18 @@ async function fetchItemData() {
 function updateItem() {
     backButton = itemShow.outerHTML;
     itemShow.innerHTML =
-        '<form id="registerForm">\n'+
         '<div class="card-body p-md-5 text-black">\n' +
         '                                 <h3 class="mb-5 text-uppercase"> Зміна параметрів товару </h3>\n' +
         '                                 <div class="row">\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
         '                                       <div class="form-outline">\n' +
-        '                                          <input type="text" id="form3Example1m" class="form-control form-control-sm" placeholder="EcoFlow" name="name"/>\n' +
+        '                                          <input type="text" id="form3Example1m" class="form-control form-control-sm" placeholder="EcoFlow" name="name" value="' + generalItem.get("name") +'"/>\n' +
         '                                          <label class="form-label" for="form3Example1m"> Ім\'я товару </label>\n' +
         '                                       </div>\n' +
         '                                    </div>\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
         '                                       <div class="form-outline">\n' +
-        '                                          <input type="text" id="form3Example1n" class="form-control form-control-sm" placeholder="https://img.kwcdn.com/product..." name="imageUrl"/>\n' +
+        '                                          <input type="text" id="form3Example1n" class="form-control form-control-sm" placeholder="https://img.kwcdn.com/product..." name="imageUrl" value="' + generalItem.get("imageUrl") +'"/>\n' +
         '                                          <label class="form-label" for="form3Example1n"> URL-адреса зображення </label>\n' +
         '                                       </div>\n' +
         '                                    </div>\n' +
@@ -118,9 +119,9 @@ function updateItem() {
         '                                       <label class="form-label"> Тип </label>\n' +
         '                                    </div>\n' +
         '                                       <div class="col-md-6 mb-4">\n' +
-            '                                       <select class="form-control" name="Наявність" id="reg-country">\n' +
-                '                                          <option>Є</option>\n' +
-                '                                          <option>Немає</option>\n' +
+            '                                       <select class="form-control" name="isItemAvailable" id="reg-country">\n' +
+                '                                          <option value="true">Є</option>\n' +
+                '                                          <option value="false">Немає</option>\n' +
                 '                                       </select>\n' +
             '                                       <label class="form-label"> Тип </label>\n' +
             '                                    </div>\n' +
@@ -129,13 +130,13 @@ function updateItem() {
         '                                 <div class="row">\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
         '                                       <div class="form-outline">\n' +
-        '                                          <input type="text" id="form3Example3m" class="form-control form-control-sm" placeholder="3333" name="price"/>\n' +
+        '                                          <input type="text" id="form3Example3m" class="form-control form-control-sm" placeholder="3333" name="price" value="' + generalItem.get("price") +'"/>\n' +
         '                                          <label class="form-label" for="form3Example3m"> Ціна </label>\n' +
         '                                       </div>\n' +
         '                                    </div>\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
         '                                       <div class="form-outline">\n' +
-        '                                          <input type="text" id="form3Example6n" class="form-control form-control-sm" placeholder="60" name="password"/>\n' +
+        '                                          <input type="text" id="form3Example6n" class="form-control form-control-sm" placeholder="60" name="power" value="' + generalItem.get("power") +'"/>\n' +
         '                                          <label class="form-label" for="form3Example6n"> Потужність </label>\n' +
         '                                       </div>\n' +
         '                                    </div>\n' +
@@ -143,20 +144,20 @@ function updateItem() {
         '                                 <div class="row">\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
         '                                       <div class="form-outline">\n' +
-        '                                          <input type="text" id="form3Example5m" class="form-control form-control-sm" placeholder="5" name="quantity"/>\n' +
+        '                                          <input type="text" id="form3Example5m" class="form-control form-control-sm" placeholder="5" name="quantity" value="' + generalItem.get("quantity") +'"/>\n' +
         '                                          <label class="form-label" for="form3Example5m"> Кількість </label>\n' +
         '                                       </div>\n' +
         '                                    </div>\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
         '                                       <div class="form-outline">\n' +
-        '                                          <input type="text" id="form3Example7n" class="form-control form-control-sm" placeholder="15" name="actualWeight"/>\n' +
+        '                                          <input type="text" id="form3Example7n" class="form-control form-control-sm" placeholder="15" name="actualWeight" value="' + generalItem.get("actualWeight") +'"/>\n' +
         '                                          <label class="form-label" for="form3Example7n"> Вага </label>\n' +
         '                                       </div>\n' +
         '                                    </div>\n' +
         '                                 </div>\n' +
         '\n' +
         '<div class="form-outline">\n' +
-            '<textarea class="form-control" id="textAreaExample1" rows="4" name="description"></textarea>\n' +
+            '<textarea class="form-control" id="textAreaExample1" rows="4" name="description">' + generalItem.get("description") + '</textarea>\n' +
             '<label class="form-label">Опис</label>\n' +
         '</div>\n' +
         '\n' +
@@ -169,12 +170,61 @@ function updateItem() {
         '\n' +
         '                                 <br>\n' +
         '\n' +
-        '                              </div>\n' +
-    '</form>';
+        '                              </div>';
 }
 
 function backToItem() {
     itemShow.outerHTML = backButton;
 }
+
+function dropItem() {
+    fetch('http://localhost:8383/api/v1/delivery/item/' + generalItem.get("id"), {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            window.location.assign('main-find-page.html');
+        })
+        .catch(error => {
+            console.error('Error:', error); // Handle errors
+        });
+}
+
+document.getElementById('update-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form data
+    const formData = new FormData(this);
+
+    // Convert form data to JSON
+    const jsonObject = {};
+    formData.forEach((value, key) => {
+        jsonObject[key] = value;
+    });
+    jsonObject['id'] = generalItem.get("id");
+    const jsonData = JSON.stringify(jsonObject);
+    console.log(jsonObject);
+
+    // Send POST request with JSON content type
+    fetch('http://localhost:8383/api/v1/delivery/item', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            window.location.assign('item-page.html?itemId=' + generalItem.get("id"));
+        })
+        .catch(error => {
+            console.error('Error:', error); // Handle errors
+        });
+});
 
 fetchItemData();
