@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <title>Planet Express</title>
 </head>
-<body>
-<!--      HEADER-->
+
 <nav class="navbar navbar-dark fixed-top bg-custom-purple">
     <img src="assets/img/favicon.png" alt="Description of image" class="img-fluid" width="30" height="30">
-    <a class="navbar-brand" href="main-find-page.html">Planet Express</a>
+    <a class="navbar-brand" href="#">Planet Express</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,8 +38,8 @@
                     </svg>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="main-find-page.html">Пошук товарів&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Пошук товарів&nbsp;&nbsp;<span class="sr-only">(current)</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -72,115 +75,127 @@
 <br>
 
 <div class="container-fluid text-center">
-    <h3 class="section-title mb-2 h2 text-dark">Персональні дані користувача</h3>
+    <h3 class="section-title mb-2 h2 text-dark">Створити товар</h3>
 </div>
 
 <br>
 <br>
 <br>
-<form id="id-for-update-user">
-    <div class="container" id="show-user-data">
-        <div class="main-body">
-            <div class="row gutters-sm">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex flex-column align-items-center text-center">
-                                <img id="user-image" src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                     alt="Admin" class="rounded-circle" width="150">
-                                <div class="mt-2">
-                                    <br>
-                                    <h4 id="user-full-name-h4">Kenneth Valdez</h4>
-                                    <p class="text-secondary mb-1" id="user-email-close-to-h4">
-                                        martinexample@gmail.com</p>
-                                    <br>
+
+<form id="create-item-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-margin">
+                    <div class="card-body">
+                        <div class="row search-body">
+                            <div class="col-lg-12">
+                                <div class="search-result">
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <a class="btn bg-custom-purple text-white" target="__blank"
-                                               href="parcels-by-user-page.html">Переглянути створені товари</a>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Example1m"
+                                                       class="form-control form-control-sm"
+                                                       placeholder="EcoFlow"
+                                                       name="name"/>
+                                                <label class="form-label" for="form3Example1m"> Ім'я товару </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Example1n"
+                                                       class="form-control form-control-sm"
+                                                       placeholder="https://img.kwcdn.com/product..." name="imageUrl"/>
+                                                <label class="form-label" for="form3Example1n"> URL-адреса
+                                                    зображення </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <br>
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <a class="btn bg-custom-purple text-white" target="__blank"
-                                               href="parcels-by-user-page.html">Переглянути історію посилок</a>
+                                        <div class="col-md-6 mb-4">
+                                            <select class="form-control" name="itemType" id="reg-country">
+                                                <option>Зарядні станції</option>
+                                                <option>Сонячні панелі</option>
+                                                <option>Вітрові турбіни</option>
+                                                <option>Системи зберігання енергії</option>
+                                                <option>Смарт-лічильники</option>
+                                                <option>Інвертори</option>
+                                                <option>Смарт-освітлення</option>
+                                                <option>Системи опалення</option>
+                                                <option>Системи охолодження</option>
+                                                <option>Камери безпеки</option>
+                                                <option>Датчики руху</option>
+                                                <option>Датчики температури</option>
+                                                <option>Датчики вологості</option>
+                                                <option>Монітори якості повітря</option>
+                                                <option>Смарт-замки</option>
+                                                <option>Смарт-термостати</option>
+                                                <option>Голосові помічники</option>
+                                                <option>Пристрої шлюзів</option>
+                                                <option>Мережеві комутатори</option>
+                                                <option>Смарт-розетки</option>
+                                            </select>
+                                            <label class="form-label"> Тип </label>
                                         </div>
+                                        <div class="col-md-6 mb-4">
+                                            <select class="form-control" name="isItemAvailable" id="reg-city">
+                                                <option value="true">Є</option>
+                                            </select>
+                                            <label class="form-label"> Тип </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Example3m"
+                                                       class="form-control form-control-sm"
+                                                       placeholder="3333"
+                                                       name="price"/>
+                                                <label class="form-label" for="form3Example3m"> Ціна </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Example6n"
+                                                       class="form-control form-control-sm" placeholder="60"
+                                                       name="power"/>
+                                                <label class="form-label" for="form3Example6n"> Потужність </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Example5m"
+                                                       class="form-control form-control-sm" placeholder="5"
+                                                       name="quantity"/>
+                                                <label class="form-label" for="form3Example5m"> Кількість </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="form3Example7n"
+                                                       class="form-control form-control-sm" placeholder="15"
+                                                       name="actualWeight"/>
+                                                <label class="form-label" for="form3Example7n"> Вага </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline">
+                                        <textarea class="form-control" id="textAreaExample1" rows="4"
+                                                  name="description"></textarea>
+                                        <label class="form-label">Опис</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Повне ім'я</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary" id="user-full-name">
-                                    Kenneth Valdez
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Email</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary" id="user-email">
-                                    fip@jukmuh.al
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Номер телефону</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary" id="user-phone">
-                                    (239) 816-9029
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Країна</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary" id="user-country">
-                                    Україна
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Місто</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary" id="user-city">
-                                    Київ
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Роль</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary" id="user-role">
-                                    Користувач
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <a class="btn bg-custom-purple text-white" target="__blank" onclick="changeData()"
-                                       href="#">Редагувати дані</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a class="btn btn-danger text-white" onclick="logOut()" href="#">Вийти</a>
-                                </div>
-                            </div>
+                        <div class="d-flex justify-content-end" style="margin-left: auto">
+                            <button type="submit" class="btn bg-custom-purple text-white">Створити товар</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </form>
@@ -199,8 +214,8 @@
                                 <div class="result-header">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <div class="records"><h4><b>Виникли питання щодо правильності ваших
-                                                даних?</b></h4></div>
+                                            <div class="records"><h4><b>Виникли питання щодо створення товару?</b></h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +241,6 @@
 <br>
 <br>
 
-<!--      FOOTER-->
 <footer class="text-white bg-body-tertiary text-center bg-custom-purple">
     <div class="container p-0" style="height: 140px">
         <section class="mb-0">
@@ -281,11 +295,8 @@
     <!-- Copyright -->
 </footer>
 
-<script src="assets/js/user-page.js"></script>
 <script src="assets/js/main-page.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+<script src="assets/js/create-item-page.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

@@ -94,7 +94,7 @@ function updateItem() {
         '                                 </div>\n' +
         '                                 <div class="row">\n' +
         '                                    <div class="col-md-6 mb-4">\n' +
-        '                                       <select class="form-control" name="itemType" id="reg-country">\n' +
+        '                                       <select class="form-control" name="itemType" id="reg-type">\n' +
         '                                          <option>Зарядні станції</option>\n' +
         '                                          <option>Сонячні панелі</option>\n' +
         '                                          <option>Вітрові турбіни</option>\n' +
@@ -119,7 +119,7 @@ function updateItem() {
         '                                       <label class="form-label"> Тип </label>\n' +
         '                                    </div>\n' +
         '                                       <div class="col-md-6 mb-4">\n' +
-            '                                       <select class="form-control" name="isItemAvailable" id="reg-country">\n' +
+            '                                       <select class="form-control" name="isItemAvailable" id="reg-aval">\n' +
                 '                                          <option value="true">Є</option>\n' +
                 '                                          <option value="false">Немає</option>\n' +
                 '                                       </select>\n' +

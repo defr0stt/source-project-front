@@ -117,4 +117,8 @@ async function searchItems() {
     }
 }
 
+if (sessionStorage.getItem('accessToken') == null) {
+    document.getElementById('add-item').innerHTML = ''
+}
+
 fetchItemData();

@@ -105,7 +105,7 @@ function changeData() {
         '                                       <label class="form-label"> Країна </label>\n' +
         '                                    </div>\n' +
         '                                       <div class="col-md-6 mb-4">\n' +
-        '                                       <select class="form-control" name="city" id="reg-country">\n' +
+        '                                       <select class="form-control" name="city" id="reg-city">\n' +
         '                                          <option value="Київ">Київ</option>\n' +
         '                                          <option value="Вінниця">Вінниця</option>\n' +
         '                                          <option value="Львів">Львів</option>\n' +
