@@ -1,5 +1,5 @@
-const apiItemModelUrl = 'http://localhost:8383/api/v1/delivery/model/items';
-const apiItemByNameUrl = 'http://localhost:8383/api/v1/delivery/items';
+const apiItemModelUrl = 'http://localhost:8383/api/v1/delivery/items/user';
+const apiUrlToGetDataFromJwt = 'http://localhost:8181/api/v1/auth/get-user-data/'
 
 const availability = new Map();
 
@@ -9,7 +9,12 @@ async function fetchItemData() {
     availability.set(true, "Є");
     availability.set(false, "Немає");
     try {
-        const responseItem = await fetch(apiItemModelUrl);
+        const token = sessionStorage.getItem('accessToken');
+        const responseUser = await fetch(apiUrlToGetDataFromJwt + token);
+        let userResponseMap = new Map(Object.entries(await responseUser.json()));
+        console.log(userResponseMap)
+
+        const responseItem = await fetch(apiItemModelUrl + "?userId=" + userResponseMap.get('id'));
         if (!responseItem.ok) {
             throw new Error("Network response was not OK");
         }
@@ -91,35 +96,6 @@ function addInfo(resultObject) {
     newRow1.appendChild(cell5);
 
     tbody.appendChild(newRow1);
-}
-
-async function searchItems() {
-    try {
-        const responseItem = await fetch(apiItemByNameUrl + '?name=' + search.value);
-        if (!responseItem.ok) {
-            throw new Error("Network response was not OK");
-        }
-        var jsonResponse = new Map(Object.entries(await responseItem.json()));
-        console.log(jsonResponse);
-
-        const obj = {
-            id: jsonResponse.get('id'),
-            imageUrl: jsonResponse.get('imageUrl'),
-            name: jsonResponse.get('name'),
-            itemType: jsonResponse.get('itemType'),
-            price: jsonResponse.get('price'),
-            isItemAvailable: jsonResponse.get('isItemAvailable'),
-        }
-        tbody.innerHTML = '';
-        addInfo(obj)
-
-    } catch (error) {
-        console.error("There was a problem with your fetch request: ", error);
-    }
-}
-
-if (sessionStorage.getItem('accessToken') == null) {
-    document.getElementById('add-item').innerHTML = ''
 }
 
 fetchItemData();

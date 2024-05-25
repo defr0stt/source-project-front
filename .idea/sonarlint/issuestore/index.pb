@@ -1,8 +1,6 @@
 
 N
 bootsrap/assets/img/rocket.svg,3\5\3528d37857259e40eacb30cb4ce51d3afb07ccc5
-R
-"bootsrap/parcels-by-user-page.html,f\f\ff36151591930d980c818026061f5322e16c265e
 O
 bootsrap/track-parcel-page.html,e\d\ed70dc4e5a265fe1d6ff5a0063d9166d45a4f42a
 N
