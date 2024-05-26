@@ -48,6 +48,7 @@ fetchUserData();
 
 function logOut() {
     sessionStorage.removeItem('accessToken');
+    sessionStorage.getItem('cartArray').clear();
     window.location.assign('login-page.html');
 }
 
@@ -153,6 +154,7 @@ function sendChangedData() {
         .then(data => {
             console.log(data)
             sessionStorage.removeItem('accessToken');
+            sessionStorage.getItem('cartArray').clear();
             window.location.assign('login-page.html');
         })
         .catch(error => {

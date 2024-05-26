@@ -1062,3 +1062,9 @@ body {
 .profile-tab p{
     font-weight: 600;
 }
+
+.center{
+    width: 150px;
+    margin: 40px auto;
+
+}

@@ -42,11 +42,16 @@ async function fetchItemData() {
         generalItem = jsonResponse;
         console.log(jsonResponse);
 
+        avail = availability.get(jsonResponse.get("isItemAvailable"));
+        if (avail === 'Немає') {
+            document.getElementById('add-to-cart-button').outerHTML = '';
+        }
+
         itemName.innerText = jsonResponse.get("name");
         itemTitle.innerText = jsonResponse.get("name");
         itemPrice.innerText = jsonResponse.get("price") + ' грн.';
         itemType.innerText = jsonResponse.get("itemType");
-        itemAvailability.innerText = availability.get(jsonResponse.get("isItemAvailable"));
+        itemAvailability.innerText = avail;
         itemQuantity.innerText = jsonResponse.get("quantity");
         itemWeight.innerText = jsonResponse.get("actualWeight") + ' кг.';
         itemPower.innerText = jsonResponse.get("power") + ' V';
@@ -226,5 +231,38 @@ document.getElementById('update-form').addEventListener('submit', function(event
             console.error('Error:', error); // Handle errors
         });
 });
+
+function addToCartItems() {
+    if (sessionStorage.getItem('accessToken') == null) {
+        addToCart.href = '/source-project-front/bootsrap/login-page.html';
+    } else {
+        let mapArray;
+        if (sessionStorage.getItem('cartArray') === 'qwerty') {
+            mapArray = new Map();
+        } else {
+            let tempMapArray = JSON.parse(sessionStorage.getItem('cartArray'));
+            mapArray = new Map(tempMapArray);
+        }
+        console.log(mapArray)
+        let itemName = document.getElementById('item-title').innerText
+        if (mapArray.get(itemName) == null) {
+            let carObject = {
+                id: generalItem.get("id"),
+                link: 'item-page.html?itemId=' + generalItem.get("id"),
+                imageUrl: document.getElementById('item-image-url').src,
+                name: itemName,
+                quantity: document.getElementById('item-quantity').innerText,
+                price: document.getElementById('item-price').innerText
+            }
+            mapArray.set(itemName, carObject);
+            const mapArrayMessage = Array.from(mapArray);
+            const mapString = JSON.stringify(mapArrayMessage);
+            sessionStorage.setItem('cartArray', mapString);
+            alert("Товар " + itemName + " був доданий до кошику")
+        } else {
+            alert("Товар " + itemName + " уже доданий до кошику")
+        }
+    }
+}
 
 fetchItemData();

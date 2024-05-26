@@ -1,4 +1,9 @@
 function updateAuthReference() {
+    if (sessionStorage.getItem('cartArray') == null
+        || sessionStorage.getItem('cartArray') === undefined) {
+        sessionStorage.setItem('cartArray', 'qwerty');
+    }
+
     const token = sessionStorage.getItem('accessToken');
     const auth = document.getElementById('auth-text');
     const authHref = document.getElementById('auth-text-href');
